@@ -5,6 +5,18 @@
   <img src="https://img.shields.io/badge/Privileged%20Identity%20Management-blue?style=for-the-badge">
 </p>
 
+ <p align="center">
+  <a href="https://github.com/AmalUBasnayake/Azure-IAM-PIM-Lab/stargazers">
+    <img src="https://img.shields.io/github/stars/AmalUBasnayake/Azure-IAM-PIM-Lab?style=social">
+  </a>
+  <a href="https://www.linkedin.com/in/amal-udayanga-basnayake">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin">
+  </a>
+  <a href="https://github.com/AmalUBasnayake">
+    <img src="https://img.shields.io/badge/GitHub-Portfolio-black?style=flat&logo=github">
+  </a>
+</p>
+
 <h1 align="center">🔐 Azure Privileged Identity Management (PIM) & IAM Hardening Lab</h1>
 
 <p align="center">
@@ -14,149 +26,139 @@ Aligned with AZ-500 – Identity & Access Domain
 
 ---
 
-# 🏗️ Lab Architecture Overview
+## 🎯 Lab Objective
+
+This lab demonstrates secure identity and privileged access governance using:
+
+✔ Role eligibility  
+✔ Permanent eligible settings  
+✔ Just-In-Time (JIT) activation with justification  
+✔ Audit and activity tracking  
+
+By enforcing least privilege and just-in-time access, this configuration strengthens identity security in Microsoft Entra ID (Azure AD).
+
+---
+
+## 🏗️ Architecture Overview
 
 <p align="center">
   <img src="screenshots/Architecture.png" width="90%">
-  <br>
-  <em>Figure 1 — PIM Architecture in Microsoft Entra ID (Eligible → Just-In-Time Active → Audit Logging)</em>
+  <br><em>Figure 1 — PIM architecture showing eligible role assignment and JIT activation in Microsoft Entra ID.</em>
 </p>
 
-### Architecture Flow Explained
+This diagram illustrates:
 
-1. Test users are created inside the Microsoft Entra ID Student Tenant  
-2. Users are assigned **Eligible** roles using Privileged Identity Management  
-3. Role activation requires **justification (JIT elevation)**  
-4. Activation transitions from Eligible → Active  
-5. All privileged activity is logged in Azure Activity Logs  
-
-This simulates real-world enterprise identity governance.
+- Users created in Microsoft Entra ID  
+- Eligible role assignments via PIM  
+- Activation workflow requiring justification  
+- Privileged role elevation to Active status  
+- Audit logging for compliance
 
 ---
 
-# 🎯 Lab Objective
-
-This lab demonstrates secure privileged access management using:
-
-- Eligible role assignments  
-- Permanent eligible configuration  
-- Just-in-time (JIT) activation  
-- Mandatory justification  
-- Audit log validation  
-
-The objective is to apply **least privilege principles** and reduce standing administrative access.
+## 🖼️ Lab Output: Screenshots & Evidence
 
 ---
 
-# 🖼️ Implementation Evidence
-
-## 1️⃣ Creating Entra ID Users
+### 1️⃣ Creating Entra ID Users
 
 <p align="center">
   <img src="screenshots/Create User.png" width="85%">
-  <br>
-  <em>Figure 2 — Creating internal test users in Microsoft Entra ID</em>
+  <br><em>Figure 2 — Internal users created in Microsoft Entra ID.</em>
 </p>
+
+Users were created inside the tenant to simulate organizational identities.
 
 ---
 
-## 2️⃣ Configuring Eligible Assignment (Permanent Eligible Enabled)
+### 2️⃣ Eligible Role Assignment (Permanent Eligible)
 
 <p align="center">
   <img src="screenshots/temporty access create the users .png" width="85%">
-  <br>
-  <em>Figure 3 — Assigning User Administrator role as Eligible with Permanent Eligible enabled</em>
+  <br><em>Figure 3 — Setting User Administrator role as Eligible (Permanent eligible option enabled).</em>
 </p>
 
-Key Configuration:
-- Assignment Type: Eligible
-- Role: User Administrator
-- Permanent Eligible: Enabled
-- Defined start & end date
+Key settings:
+✔ Role: User Administrator  
+✔ Assignment Type: Eligible  
+✔ Permanent Eligible: Yes
 
 ---
 
-## 3️⃣ Role Activation with Justification (JIT Access)
+### 3️⃣ JIT Role Activation with Justification
 
 <p align="center">
   <img src="screenshots/temporty access.png" width="85%">
-  <br>
-  <em>Figure 4 — Just-in-Time role activation requiring justification</em>
+  <br><em>Figure 4 — Activating privileged role with justification requirement.</em>
 </p>
 
-Activation requires:
-- Justification entry
-- Time-bound activation
-- Approval workflow (if configured)
+This ensures that privileged access is justified, audit-ready, and time-limited.
 
 ---
 
-# 📋 Implementation Steps Summary
+## 📋 Step-by-Step Implementation
 
-1. Created test users in Microsoft Entra ID  
-2. Navigated to Privileged Identity Management → Microsoft Entra Roles  
-3. Assigned **User Administrator** as Eligible  
-4. Enabled **Permanent Eligible** option  
-5. Activated role using Just-in-Time access  
-6. Verified status under Activity Details  
+1. Created test user accounts in Microsoft Entra ID  
+2. Opened Privileged Identity Management → Microsoft Entra roles  
+3. Assigned **User Administrator** role as Eligible  
+4. Enabled “Permanent eligible” on the assignment  
+5. Defined start & end dates  
+6. Activated role with justification  
+7. Verified assignment under Activity Details
 
 ---
 
-# 🔐 Security Principles Demonstrated
+## 🔐 Security Concepts Demonstrated
 
-✔ Least Privilege  
-✔ Just-in-Time (JIT) Elevation  
-✔ Role Governance  
+✔ Least Privilege Access  
+✔ Just-In-Time (JIT) Elevation  
+✔ Eligible vs Active Role States  
 ✔ Audit & Accountability  
-✔ Zero Trust Identity Model  
+✔ Identity Governance & Compliance
 
 ---
 
-# 🧠 Key Learnings
+## 🧠 Key Learnings
 
-- Difference between **Eligible vs Active** role assignments  
-- Why permanent admin access increases risk  
-- How PIM reduces attack surface  
-- Importance of justification & logging for compliance  
-- Enterprise IAM hardening strategies  
-
----
-
-# 🎓 AZ-500 Certification Alignment
-
-This lab supports:
-
-- Implement identity governance  
-- Configure privileged access  
-- Manage Microsoft Entra roles  
-- Monitor privileged activity  
+- Eligible assignments provide controlled access without standing privileges  
+- Justification and logging support compliance requirements  
+- Permanent eligible assignments simplify repeated admin access
+- PIM encourages Zero Trust identity practices
 
 ---
 
-# 🏛 Enterprise Security Value
+## 🎓 AZ-500 Certification Relevance
 
-In real-world organizations:
+This lab supports these AZ-500 objectives:
 
-Uncontrolled administrative access is a major breach vector.
-
-Using PIM:
-- Standing admin access is eliminated  
-- Privileges are time-bound  
-- All elevation is logged  
-- Governance & compliance posture improves  
+✔ Implement identity governance  
+✔ Manage privileged access  
+✔ Monitor role activations  
+✔ Configure PIM for least privilege  
 
 ---
 
-# 👨‍💻 Author
+## 🏛 Enterprise Security Value
+
+In real-world environments, uncontrolled admin access is a serious risk factor for:
+
+⚠ Insider threats  
+⚠ Account takeover attacks  
+⚠ Security misconfigurations  
+⚠ Compliance failures
+
+Implementing PIM with just-in-time activation reduces risk and improves governance.
+
+---
+
+## 👨‍💻 About the Author
 
 **Amal Udayanga Basnayake**  
-Cloud Security | Azure Security | Identity & Access Governance  
+Cloud Security | Azure Security Engineer | Identity & Access Governance
 
 🔗 LinkedIn: https://www.linkedin.com/in/amal-udayanga-basnayake  
 🔗 GitHub: https://github.com/AmalUBasnayake  
 
----
-
 <p align="center">
-⭐ If this lab supports your AZ-500 preparation, consider starring the repository!
+⭐ If this lab helped your AZ-500 prep, consider giving the repository a star!
 </p>
