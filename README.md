@@ -17,7 +17,7 @@ Aligned with AZ-500 – Identity & Access Domain
 # 🏗️ Lab Architecture Overview
 
 <p align="center">
-  <img src="screenshots/lab-architecture.png" width="90%">
+  <img src="screenshots/Architecture.png" width="90%">
   <br>
   <em>Figure 1 — PIM Architecture in Microsoft Entra ID (Eligible → Just-In-Time Active → Audit Logging)</em>
 </p>
